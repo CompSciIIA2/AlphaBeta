@@ -10,7 +10,8 @@ import java.util.Set;
  * @param <S> the class implementing this interface
  * @param <M> a class implementing the {@code Move} interface to represent
  * a game move
- * @param <P> an enum representing players of the game
+ * @param <P> an enum representing players of the game and implementing the
+ * {@code Player} interface
  */
 public interface State<S, M extends Move<P>, P extends Enum<P> & Player> {
     /**

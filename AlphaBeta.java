@@ -8,6 +8,15 @@ import java.util.Objects;
 /**
  * Class implementing the alpha-beta pruned minimax algorithm
  * for game playing.
+ * <p>To use the algorithm, one should make a subclass of this class
+ * that fills in all of the type parameters (generics) with the correct ones
+ * for that particular game. A single instance of the class can then
+ * be instantiated and used for all calls to the algorithm.</p>
+ * 
+ * <p>One can simply ask for a next recommended move or ask for a rated move,
+ * in which the move is wrapped in a {@code RatedMove} object containing
+ * the value of the move. Remember that higher values are better for the
+ * maximizing player, while lower ratings are better for the minimizing player.
  * @author Mr. Nichols
  * @param <S> class representing game states
  * @param <M> class representing the moves in this game
@@ -20,7 +29,8 @@ public class AlphaBeta<S extends State<S,M,P>, M extends Move<P>,
      * Given a game state, return a {@code RatedMove} object
      * containing a recommended next move and its value.
      * @param state the game state to start from
-     * @param depth the maximum depth to search
+     * @param depth the maximum depth in the game tree to search (deeper searches
+     * take longer but yield better results)
      * @return a {@code RatedMove} object with the recommended next move
      */
     public RatedMove<M,P> findRatedMove(S state, int depth) {

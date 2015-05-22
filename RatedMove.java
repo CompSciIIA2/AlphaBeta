@@ -37,6 +37,15 @@ public class RatedMove<M extends Move<P>, P extends Enum<P> & Player> implements
         return value;
     }
 
+    /**
+     * Compares this {@code RatedMove} to another one by rating.
+     * The comparison is done by the rating of the move. Moves that 
+     * have a higher rating are "greater than" other moves.
+     * @param o the other {@code RatedMode} to compare to
+     * @return a negative integer, zero, or a positive integer if this {@code RatedMove} object 
+     * is less than, equal to, or greater than the specified {@code RatedMove} 
+     * object, respectively
+     */
     @Override
     public int compareTo(RatedMove<M,P> o) {
         return Double.compare(value, o.getValue());
