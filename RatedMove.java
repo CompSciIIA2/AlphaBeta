@@ -2,7 +2,8 @@ package mrnichols.alphabeta;
 
 /**
  * Represents a move with a heuristic value.
- * @author Mr. Nichols
+ * <i>Note: This class has a natural ordering that is inconsistent with equals.</i>
+ * @author Michael Nichols
  * @param <M> class representing a move
  * @param <P> enum representing players
  */
